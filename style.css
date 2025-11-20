@@ -51,3 +51,23 @@ button:hover {
 .option:hover {
   background: #eef3ea;
 }
+
+.question-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-container {
+  /* existing styles … */
+  padding: 30px;
+}
+
+.option-btn {
+  /* your button styles */
+  margin-top: 12px;
+}
