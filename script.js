@@ -1,7 +1,6 @@
 const quizData = [
   {
     question: "What kind of forest atmosphere comforts you the most?",
-    image: "images/question1.jpg",
     options: [
       { text: "Soft glowing mushrooms", type: "dreamer" },
       { text: "Warm mossy patches", type: "nurturer" },
@@ -12,7 +11,6 @@ const quizData = [
   },
   {
     question: "A creature approaches you. How do you respond?",
-    image: "images/question2.jpg",
     options: [
       { text: "Offer a story", type: "dreamer" },
       { text: "Make sure it's safe", type: "nurturer" },
@@ -22,48 +20,45 @@ const quizData = [
     ]
   },
   {
-    question: "What kind of forest atmosphere comforts you the most?",
-    image: "images/question1.jpg",
+    question: "You find a glowing object. What is it?",
     options: [
-      { text: "Soft glowing mushrooms", type: "dreamer" },
-      { text: "Warm mossy patches", type: "nurturer" },
-      { text: "Hidden old ruins", type: "thinker" },
-      { text: "Busy critter communities", type: "social" },
-      { text: "Open windy clearings", type: "wanderer" }
+      { text: "A floating seed", type: "dreamer" },
+      { text: "A healing herb cluster", type: "nurturer" },
+      { text: "A mysterious stone tablet", type: "thinker" },
+      { text: "A charm woven by creatures", type: "social" },
+      { text: "A compass-like feather", type: "wanderer" }
     ]
   },
   {
-    question: "A creature approaches you. How do you respond?",
-    image: "images/question2.jpg",
+    question: "Which path calls to you?",
     options: [
-      { text: "Offer a story", type: "dreamer" },
-      { text: "Make sure it's safe", type: "nurturer" },
-      { text: "Study its markings", type: "thinker" },
-      { text: "Greet it cheerfully", type: "social" },
-      { text: "Walk alongside silently", type: "wanderer" }
-    ]
-  },  {
-    question: "What kind of forest atmosphere comforts you the most?",
-    image: "images/question1.jpg",
-    options: [
-      { text: "Soft glowing mushrooms", type: "dreamer" },
-      { text: "Warm mossy patches", type: "nurturer" },
-      { text: "Hidden old ruins", type: "thinker" },
-      { text: "Busy critter communities", type: "social" },
-      { text: "Open windy clearings", type: "wanderer" }
+      { text: "A dreamy foggy trail", type: "dreamer" },
+      { text: "A warm dappled sunlight path", type: "nurturer" },
+      { text: "A narrow twisting ancient tunnel", type: "thinker" },
+      { text: "A lively woodland village road", type: "social" },
+      { text: "A roadless open field", type: "wanderer" }
     ]
   },
   {
-    question: "A creature approaches you. How do you respond?",
-    image: "images/question2.jpg",
+    question: "Your forest gift is:",
     options: [
-      { text: "Offer a story", type: "dreamer" },
-      { text: "Make sure it's safe", type: "nurturer" },
-      { text: "Study its markings", type: "thinker" },
-      { text: "Greet it cheerfully", type: "social" },
-      { text: "Walk alongside silently", type: "wanderer" }
+      { text: "Imagination", type: "dreamer" },
+      { text: "Kindness", type: "nurturer" },
+      { text: "Insight", type: "thinker" },
+      { text: "Community", type: "social" },
+      { text: "Freedom", type: "wanderer" }
     ]
   },
+  {
+    question: "Choose your companion:",
+    options: [
+      { text: "A tiny moon moth", type: "dreamer" },
+      { text: "A protective mossbeast", type: "nurturer" },
+      { text: "A puzzle-loving sprite", type: "thinker" },
+      { text: "A friendly sporeling", type: "social" },
+      { text: "A wandering crow", type: "wanderer" }
+    ]
+  }
 ];
 
 let currentQuestion = 0;
