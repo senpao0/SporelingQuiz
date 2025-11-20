@@ -1,3 +1,13 @@
+const introScreen = document.getElementById("intro-screen");
+const quizScreen = document.getElementById("quiz-screen");
+const startBtn = document.getElementById("start-btn");
+
+startBtn.addEventListener("click", () => {
+  introScreen.classList.add("hidden");
+  quizScreen.classList.remove("hidden");
+  loadQuestion();
+});
+
 const quizData = [
   {
     question: "What kind of forest atmosphere comforts you the most?",
