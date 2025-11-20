@@ -101,30 +101,29 @@ const resultsData = {
 };
 
 // ---------------------
-// STATE
-// ---------------------
-let currentIndex = 0;
-let scores = { dreamer:0, nurturer:0, thinker:0, social:0, wanderer:0 };
-
-// ---------------------
-// ELEMENTS
-// ---------------------
-const introScreen = document.getElementById("intro-screen");
-const startBtn = document.getElementById("start-btn");
-
-const quizScreen = document.getElementById("quiz-screen");
-const questionImage = document.getElementById("question-image");
-const questionText = document.getElementById("question-text");
-const optionsDiv = document.getElementById("options");
-const nextBtn = document.getElementById("next-btn");
-
-const resultScreen = document.getElementById("result-screen");
-const resultTitle = document.getElementById("result-title");
-const resultImage = document.getElementById("result-image");
-const restartBtn = document.getElementById("restart-btn");
+  // STATE
+  // ---------------------
+  let currentIndex = 0;
+  let scores = { dreamer:0, nurturer:0, thinker:0, social:0, wanderer:0 };
 
   // ---------------------
-  // FUNCTIONS
+  // ELEMENTS
+  // ---------------------
+  const introScreen = document.getElementById("intro-screen");
+  const startBtn = document.getElementById("start-btn");
+
+  const quizScreen = document.getElementById("quiz-screen");
+  const questionImage = document.getElementById("question-image");
+  const questionText = document.getElementById("question-text");
+  const optionsDiv = document.getElementById("options");
+
+  const resultScreen = document.getElementById("result-screen");
+  const resultTitle = document.getElementById("result-title");
+  const resultImage = document.getElementById("result-image");
+  const restartBtn = document.getElementById("restart-btn");
+
+  // ---------------------
+  // START QUIZ
   // ---------------------
   startBtn.addEventListener("click", () => {
     introScreen.classList.add("hidden");
@@ -132,7 +131,15 @@ const restartBtn = document.getElementById("restart-btn");
     showQuestion();
   });
 
+  // ---------------------
+  // SHOW QUESTION
+  // ---------------------
   function showQuestion() {
+    if (currentIndex >= quizData.length) {
+      showResult();
+      return;
+    }
+
     const q = quizData[currentIndex];
     questionImage.src = q.image;
     questionText.textContent = q.question;
@@ -142,26 +149,23 @@ const restartBtn = document.getElementById("restart-btn");
       const btn = document.createElement("button");
       btn.className = "option-btn";
       btn.textContent = opt.text;
-      btn.onclick = () => {
+
+      // ---------------------
+      // CLICK OPTION
+      // ---------------------
+      btn.addEventListener("click", () => {
         scores[opt.type]++;
-        nextBtn.style.display = "block";
-        document.querySelectorAll(".option-btn").forEach(b => b.disabled = true);
-      };
+        currentIndex++;           // increment question index
+        showQuestion();           // automatically go to next question
+      });
+
       optionsDiv.appendChild(btn);
     });
-
-    nextBtn.style.display = "none";
   }
 
-  nextBtn.addEventListener("click", () => {
-    currentIndex++;
-    if(currentIndex < quizData.length) {
-      showQuestion();
-    } else {
-      showResult();
-    }
-  });
-
+  // ---------------------
+  // SHOW RESULT
+  // ---------------------
   function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
@@ -172,12 +176,15 @@ const restartBtn = document.getElementById("restart-btn");
     resultImage.src = resultsData[topType].image;
   }
 
+  // ---------------------
+  // RESTART QUIZ
+  // ---------------------
   restartBtn.addEventListener("click", () => {
     currentIndex = 0;
     for(let key in scores) scores[key] = 0;
+
     resultScreen.classList.add("hidden");
-    quizScreen.classList.remove("hidden");
-    showQuestion();
+    introScreen.classList.remove("hidden");  // back to intro page
   });
 
 });
