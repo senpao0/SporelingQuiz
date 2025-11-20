@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Sporeling For You</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sporeling Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="quiz-container">
-    <h1>Which sporeling belongs to you?</h1>
 
-    <div id="quiz"></div>
+  <!-- INTRO SCREEN -->
+  <div id="intro-screen" class="screen">
+    <h1 class="intro-header">A Sporeling for You</h1>
+    <p class="intro-desc">They say that everyone has a sporeling that belongs to them, which one is yours?</p>
+    <img src="images/intro.png" alt="Sporeling Intro Image" class="intro-image">
+    <button id="start-btn" class="btn">Let's Go!</button>
+  </div>
 
-    <button id="next-btn">Next</button>
-    <button id="restart-btn" style="display: none;">Restart</button>
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen" class="screen hidden">
+    <div class="quiz-container">
+      <img id="question-image" class="question-image" src="" alt="Question Image">
+      <h2 id="question-text" class="question-text"></h2>
+      <div id="options" class="options"></div>
+      <button id="next-btn" class="btn hidden">Next</button>
+    </div>
+  </div>
 
-    <div id="result" class="hidden"></div>
+  <!-- RESULT SCREEN -->
+  <div id="result-screen" class="screen hidden">
+    <h1 id="result-title" class="result-title"></h1>
+    <img id="result-image" class="result-image" src="" alt="Result Image">
+    <p class="share-text">Share your result #sporelingquiz</p>
+    <p class="made-by">Made by senpao</p>
+    <button id="restart-btn" class="btn">Retake Quiz</button>
   </div>
 
   <script src="script.js"></script>
