@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 // ---------------------
 // QUIZ DATA
 // ---------------------
@@ -121,62 +123,61 @@ const resultTitle = document.getElementById("result-title");
 const resultImage = document.getElementById("result-image");
 const restartBtn = document.getElementById("restart-btn");
 
-// ---------------------
-// FUNCTIONS
-// ---------------------
-
-startBtn.addEventListener("click", () => {
-  introScreen.classList.add("hidden");
-  quizScreen.classList.remove("hidden");
-  showQuestion();
-});
-
-function showQuestion() {
-  const q = quizData[currentIndex];
-  questionImage.src = q.image;
-  questionText.textContent = q.question;
-
-  // render options
-  optionsDiv.innerHTML = "";
-  q.options.forEach(opt => {
-    const btn = document.createElement("button");
-    btn.className = "option-btn";
-    btn.textContent = opt.text;
-    btn.onclick = () => {
-      scores[opt.type]++;
-      nextBtn.style.display = "block";
-      // disable options after click
-      document.querySelectorAll(".option-btn").forEach(b => b.disabled = true);
-    };
-    optionsDiv.appendChild(btn);
+  // ---------------------
+  // FUNCTIONS
+  // ---------------------
+  startBtn.addEventListener("click", () => {
+    introScreen.classList.add("hidden");
+    quizScreen.classList.remove("hidden");
+    showQuestion();
   });
 
-  nextBtn.style.display = "none";
-}
+  function showQuestion() {
+    const q = quizData[currentIndex];
+    questionImage.src = q.image;
+    questionText.textContent = q.question;
 
-nextBtn.addEventListener("click", () => {
-  currentIndex++;
-  if(currentIndex < quizData.length) {
-    showQuestion();
-  } else {
-    showResult();
+    optionsDiv.innerHTML = "";
+    q.options.forEach(opt => {
+      const btn = document.createElement("button");
+      btn.className = "option-btn";
+      btn.textContent = opt.text;
+      btn.onclick = () => {
+        scores[opt.type]++;
+        nextBtn.style.display = "block";
+        document.querySelectorAll(".option-btn").forEach(b => b.disabled = true);
+      };
+      optionsDiv.appendChild(btn);
+    });
+
+    nextBtn.style.display = "none";
   }
-});
 
-function showResult() {
-  quizScreen.classList.add("hidden");
-  resultScreen.classList.remove("hidden");
+  nextBtn.addEventListener("click", () => {
+    currentIndex++;
+    if(currentIndex < quizData.length) {
+      showQuestion();
+    } else {
+      showResult();
+    }
+  });
 
-  const topType = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
+  function showResult() {
+    quizScreen.classList.add("hidden");
+    resultScreen.classList.remove("hidden");
 
-  resultTitle.textContent = resultsData[topType].title;
-  resultImage.src = resultsData[topType].image;
-}
+    const topType = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
 
-restartBtn.addEventListener("click", () => {
-  currentIndex = 0;
-  for(let key in scores) scores[key] = 0;
-  resultScreen.classList.add("hidden");
-  quizScreen.classList.remove("hidden");
-  showQuestion();
+    resultTitle.textContent = resultsData[topType].title;
+    resultImage.src = resultsData[topType].image;
+  }
+
+  restartBtn.addEventListener("click", () => {
+    currentIndex = 0;
+    for(let key in scores) scores[key] = 0;
+    resultScreen.classList.add("hidden");
+    quizScreen.classList.remove("hidden");
+    showQuestion();
+  });
+
 });
