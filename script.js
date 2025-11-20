@@ -1,35 +1,73 @@
 const quizData = [
   {
-    question: "You wake up in a quiet forest. What do you do first?",
+    question: "What kind of forest atmosphere comforts you the most?",
+    image: "images/question1.jpg",
     options: [
-      { text: "Look for glowing mushrooms", type: "dreamer" },
-      { text: "Check for food or supplies", type: "practical" },
-      { text: "Climb a tree to understand the terrain", type: "thinker" },
-      { text: "Say hi to nearby creatures", type: "social" }
+      { text: "Soft glowing mushrooms", type: "dreamer" },
+      { text: "Warm mossy patches", type: "nurturer" },
+      { text: "Hidden old ruins", type: "thinker" },
+      { text: "Busy critter communities", type: "social" },
+      { text: "Open windy clearings", type: "wanderer" }
     ]
   },
   {
-    question: "A small creature hands you a gift. What is it?",
+    question: "A creature approaches you. How do you respond?",
+    image: "images/question2.jpg",
     options: [
-      { text: "A shimmering leaf", type: "dreamer" },
-      { text: "A sturdy pebble", type: "practical" },
-      { text: "A puzzle-shaped rune", type: "thinker" },
-      { text: "A handmade bracelet", type: "social" }
+      { text: "Offer a story", type: "dreamer" },
+      { text: "Make sure it's safe", type: "nurturer" },
+      { text: "Study its markings", type: "thinker" },
+      { text: "Greet it cheerfully", type: "social" },
+      { text: "Walk alongside silently", type: "wanderer" }
     ]
   },
   {
-    question: "What role would you play in a forest community?",
+    question: "What kind of forest atmosphere comforts you the most?",
+    image: "images/question1.jpg",
     options: [
-      { text: "The gentle watcher", type: "dreamer" },
-      { text: "The reliable helper", type: "practical" },
-      { text: "The curious explorer", type: "thinker" },
-      { text: "The friendly gatherer", type: "social" }
+      { text: "Soft glowing mushrooms", type: "dreamer" },
+      { text: "Warm mossy patches", type: "nurturer" },
+      { text: "Hidden old ruins", type: "thinker" },
+      { text: "Busy critter communities", type: "social" },
+      { text: "Open windy clearings", type: "wanderer" }
     ]
-  }
+  },
+  {
+    question: "A creature approaches you. How do you respond?",
+    image: "images/question2.jpg",
+    options: [
+      { text: "Offer a story", type: "dreamer" },
+      { text: "Make sure it's safe", type: "nurturer" },
+      { text: "Study its markings", type: "thinker" },
+      { text: "Greet it cheerfully", type: "social" },
+      { text: "Walk alongside silently", type: "wanderer" }
+    ]
+  },  {
+    question: "What kind of forest atmosphere comforts you the most?",
+    image: "images/question1.jpg",
+    options: [
+      { text: "Soft glowing mushrooms", type: "dreamer" },
+      { text: "Warm mossy patches", type: "nurturer" },
+      { text: "Hidden old ruins", type: "thinker" },
+      { text: "Busy critter communities", type: "social" },
+      { text: "Open windy clearings", type: "wanderer" }
+    ]
+  },
+  {
+    question: "A creature approaches you. How do you respond?",
+    image: "images/question2.jpg",
+    options: [
+      { text: "Offer a story", type: "dreamer" },
+      { text: "Make sure it's safe", type: "nurturer" },
+      { text: "Study its markings", type: "thinker" },
+      { text: "Greet it cheerfully", type: "social" },
+      { text: "Walk alongside silently", type: "wanderer" }
+    ]
+  },
 ];
 
 let currentQuestion = 0;
-let scores = { dreamer: 0, practical: 0, thinker: 0, social: 0 };
+let scores = { Myca & Pip: 0, practical: 0, thinker: 0, social: 0 };
 
 const quizEl = document.getElementById("quiz");
 const nextBtn = document.getElementById("next-btn");
