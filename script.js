@@ -128,18 +128,4 @@ nextBtn.addEventListener("click", () => {
   currentQuestion++;
   nextBtn.style.display = "none";
 
-  if (currentQuestion < quizData.length) {
-    loadQuestion();
-  } else {
-    showResult();
-  }
-});
-
-restartBtn.addEventListener("click", () => {
-  currentQuestion = 0;
-  scores = { dreamer: 0, practical: 0, thinker: 0, social: 0 };
-  resultEl.classList.add("hidden");
-  restartBtn.style.display = "none";
-  loadQuestion();
-});
-
+ 
