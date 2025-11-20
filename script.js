@@ -98,12 +98,13 @@ function showResult() {
     scores[a] > scores[b] ? a : b
   );
 
-  const messages = {
-    dreamer: "You are a Moss Dreamer — gentle, magical, and imaginative.",
-    practical: "You are a Pebble Guardian — steady, grounded, dependable.",
-    thinker: "You are a Rune Scholar — curious and analytical.",
-    social: "You are a Grove Gatherer — warm, lively, and community-focused."
-  };
+const messages = {
+  dreamer: "You are a Forest Dreamer — imaginative, gentle, and deeply magical.",
+  nurturer: "You are a Moss Nurturer — warm, grounding, and protective.",
+  thinker: "You are a Rune Thinker — curious, analytical, and quietly wise.",
+  social: "You are a Grove Gatherer — lively, friendly, and community-minded.",
+  wanderer: "You are a Wind Wanderer — free-spirited, calm, and always exploring."
+};
 
   quizEl.innerHTML = "";
   resultEl.classList.remove("hidden");
