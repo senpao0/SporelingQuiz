@@ -143,4 +143,3 @@ restartBtn.addEventListener("click", () => {
   loadQuestion();
 });
 
-loadQuestion();
