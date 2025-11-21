@@ -20,17 +20,17 @@ body {
 
 /* Intro screen */
 .intro-header {
-  font-family: 'Red Hat Mono', monospace;
+  font-family: 'Faculty Glyphic', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 10px;
   color: #386641;
 }
 
 .intro-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0 auto 20px auto; 
   color: #4a7c59;
-  padding: 0 300px;           
+  padding: 0 200px;           
   max-width: 500px;         
   line-height: 1.6;          
 }
