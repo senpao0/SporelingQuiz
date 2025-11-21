@@ -103,12 +103,9 @@ const resultsData = {
 // ---------------------
   // STATE
   // ---------------------
-  let currentIndex = 0;
+ let currentIndex = 0;
   let scores = { dreamer:0, nurturer:0, thinker:0, social:0, wanderer:0 };
 
-  // ---------------------
-  // ELEMENTS
-  // ---------------------
   const introScreen = document.getElementById("intro-screen");
   const startBtn = document.getElementById("start-btn");
 
@@ -122,18 +119,12 @@ const resultsData = {
   const resultImage = document.getElementById("result-image");
   const restartBtn = document.getElementById("restart-btn");
 
-  // ---------------------
-  // START QUIZ
-  // ---------------------
   startBtn.addEventListener("click", () => {
     introScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
     showQuestion();
   });
 
-  // ---------------------
-  // SHOW QUESTION
-  // ---------------------
   function showQuestion() {
     if (currentIndex >= quizData.length) {
       showResult();
@@ -150,22 +141,16 @@ const resultsData = {
       btn.className = "option-btn";
       btn.textContent = opt.text;
 
-      // ---------------------
-      // CLICK OPTION
-      // ---------------------
       btn.addEventListener("click", () => {
         scores[opt.type]++;
-        currentIndex++;           // increment question index
-        showQuestion();           // automatically go to next question
+        currentIndex++;
+        showQuestion(); // automatically go to next question
       });
 
       optionsDiv.appendChild(btn);
     });
   }
 
-  // ---------------------
-  // SHOW RESULT
-  // ---------------------
   function showResult() {
     quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
@@ -176,15 +161,11 @@ const resultsData = {
     resultImage.src = resultsData[topType].image;
   }
 
-  // ---------------------
-  // RESTART QUIZ
-  // ---------------------
   restartBtn.addEventListener("click", () => {
     currentIndex = 0;
     for(let key in scores) scores[key] = 0;
-
     resultScreen.classList.add("hidden");
-    introScreen.classList.remove("hidden");  // back to intro page
+    introScreen.classList.remove("hidden");
   });
 
 });
