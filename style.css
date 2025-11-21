@@ -55,6 +55,27 @@ body {
   background-color: #386641;
 }
 
+.option-btn {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #4a7c59;
+  background-color: #eaf0e9;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.option-btn:hover {
+  background-color: #d6e2d9;
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.option-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
 /* Quiz Screen */
 .quiz-container {
   max-width: 500px;
