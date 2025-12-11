@@ -4,37 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sporeling Quiz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono&family=Caveat:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <!-- INTRO SCREEN -->
   <div id="intro-screen" class="screen">
-    <link href="https://fonts.google.com/specimen/Faculty+Glyphic, cursive;" rel="stylesheet">
-
-<h1 style="font-family: 'Faculty Glyphic', Serif;">Discover Your Mystical Companion</h1>
-    <p class="intro-desc">Hidden deep within the Mossbloom, tiny sporelings wait quietly for the soul they belong to, each offering a gentle blessing. Which one will find you?</p>
-    <img src="images/intro.png" alt="Sporeling Intro Image" class="intro-image">
+    <h1 class="header">A Sporeling for You</h1>
+    <p class="intro-desc">They say, hidden deep within the Mossbloom, tiny sporelings wait patiently for the soul they belong to, each carrying a gentle blessing. Which one will find you?</p>
+    <img src="images/intro.png" alt="Intro Image" class="intro-image">
     <button id="start-btn" class="btn">Let's Go!</button>
   </div>
 
-<!-- QUIZ SCREEN -->
-<div id="quiz-screen" class="screen hidden">
-  <div class="quiz-container">
-    <img id="question-image" class="question-image" src="" alt="Question Image">
-    <h2 id="question-text" class="question-text"></h2>
-    <div id="options" class="options"></div>
+  <!-- QUIZ SCREEN -->
+  <div id="quiz-screen" class="screen hidden">
+    <div class="quiz-container">
+      <img id="question-image" class="question-image" src="" alt="Question Image">
+      <h2 id="question-text" class="question-text"></h2>
+      <div id="options" class="options"></div>
+    </div>
   </div>
-</div>
+
+  <!-- PRE-RESULT SCREEN -->
+  <div id="preresult-screen" class="screen hidden">
+    <h2 class="header">Your Adventure Awaits</h2>
+    <p class="intro-desc">You’ve braved your adventure, and a little sporeling has been watching from afar, curious to meet you…</p>
+    <button id="continue-btn" class="btn">Reveal Your Sporeling</button>
+  </div>
 
   <!-- RESULT SCREEN -->
   <div id="result-screen" class="screen hidden">
-    <h1 id="result-title" class="result-title"></h1>
+    <h1 id="result-title" class="header"></h1>
     <img id="result-image" class="result-image" src="" alt="Result Image">
     <p class="share-text">Share your result #sporelingquiz</p>
-    <p class="made-by">Made by senpao</p>
-    <button id="restart-btn" class="btn">Retake Quiz</button>
+    <p class="madeby-text">Made by senpao</p>
+    <button id="restart-btn" class="btn">Restart</button>
   </div>
 
   <script src="script.js"></script>
