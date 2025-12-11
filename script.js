@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const resultsData = {
-    "Cinna": { title: "You got Cinna!", image: "images/R_C.png" },
+    "Cinna": { title: "", image: "images/R_C.png" },
     "Droop": { title: "You got Droop!", image: "images/droop.png" },
     "Glimmer": { title: "You got Glimmer!", image: "images/glimmer.png" },
     "Noxie": { title: "You got Noxie!", image: "images/noxie.png" },
