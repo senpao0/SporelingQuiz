@@ -58,7 +58,7 @@ body {
 }
 
 .result-image {
-  max-width: 600px;   /* You can set 500px or 600px if you want */
+  max-width: 500px;   /* You can set 500px or 600px if you want */
   width: 100%;
   height: auto;
   margin: 20px auto;
