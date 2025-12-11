@@ -52,9 +52,17 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.question-image, .intro-image, .result-image {
+.question-image, .intro-image {
   max-width: 300px;
   margin: 20px 0;
+}
+
+.result-image {
+  max-width: 500px;   /* You can set 500px or 600px if you want */
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
 }
 
 .options {
