@@ -1,111 +1,105 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-// ---------------------
-// QUIZ DATA
-// ---------------------
-const quizData = [
-  {
-    question: "What kind of forest atmosphere comforts you the most?",
-    image: "images/q1.png",
-    options: [
-      { text: "Soft glowing mushrooms", type: "dreamer" },
-      { text: "Warm mossy patches", type: "nurturer" },
-      { text: "Hidden old ruins", type: "thinker" },
-      { text: "Busy critter communities", type: "social" },
-      { text: "Open windy clearings", type: "wanderer" }
-    ]
-  },
-  {
-    question: "A creature approaches you. How do you respond?",
-    image: "images/q2.png",
-    options: [
-      { text: "Offer a story", type: "dreamer" },
-      { text: "Make sure it's safe", type: "nurturer" },
-      { text: "Study its markings", type: "thinker" },
-      { text: "Greet it cheerfully", type: "social" },
-      { text: "Walk alongside silently", type: "wanderer" }
-    ]
-  },
-  {
-    question: "You find a glowing object. What is it?",
-    image: "images/q3.png",
-    options: [
-      { text: "A floating seed", type: "dreamer" },
-      { text: "A healing herb cluster", type: "nurturer" },
-      { text: "A mysterious stone tablet", type: "thinker" },
-      { text: "A charm woven by creatures", type: "social" },
-      { text: "A compass-like feather", type: "wanderer" }
-    ]
-  },
-  {
-    question: "Which path calls to you?",
-    image: "images/q4.png",
-    options: [
-      { text: "A dreamy foggy trail", type: "dreamer" },
-      { text: "A warm dappled sunlight path", type: "nurturer" },
-      { text: "A narrow twisting ancient tunnel", type: "thinker" },
-      { text: "A lively woodland village road", type: "social" },
-      { text: "A roadless open field", type: "wanderer" }
-    ]
-  },
-  {
-    question: "Your forest gift is:",
-    image: "images/q5.png",
-    options: [
-      { text: "Imagination", type: "dreamer" },
-      { text: "Kindness", type: "nurturer" },
-      { text: "Insight", type: "thinker" },
-      { text: "Community", type: "social" },
-      { text: "Freedom", type: "wanderer" }
-    ]
-  },
-  {
-    question: "Choose your companion:",
-    image: "images/q6.png",
-    options: [
-      { text: "A tiny moon moth", type: "dreamer" },
-      { text: "A protective mossbeast", type: "nurturer" },
-      { text: "A puzzle-loving sprite", type: "thinker" },
-      { text: "A friendly sporeling", type: "social" },
-      { text: "A wandering crow", type: "wanderer" }
-    ]
-  }
-];
+  // --------------------- QUIZ DATA ---------------------
+  const quizData = [
+    {
+      question: "You wake up in a forest, what is the first thing you do?",
+      image: "images/q1.png",
+      options: [
+        { text: "Explore the glowing mushrooms nearby", types: ["Cinna", "Glimmer"] },
+        { text: "Sit quietly and observe your surroundings", types: ["Droop", "Noxie"] },
+        { text: "Call out to see if someone responds", types: ["Puff", "Gremie"] },
+        { text: "Find a cozy moss patch to rest on", types: ["Myca & Pip", "Lintle"] }
+      ]
+    },
+    {
+      question: "You find a sparkling stream, what do you do?",
+      image: "images/q2.png",
+      options: [
+        { text: "Follow it to see where it leads", types: ["Puff", "Glimmer"] },
+        { text: "Sit and listen to the water's song", types: ["Droop", "Cinna"] },
+        { text: "Try to catch the shimmering fish", types: ["Gremie", "Lintle"] },
+        { text: "Dip your hands and feel the coolness", types: ["Myca & Pip", "Noxie"] }
+      ]
+    },
+    {
+      question: "A mysterious glowing mushroom appears, what do you do?",
+      image: "images/q3.png",
+      options: [
+        { text: "Examine it carefully", types: ["Noxie", "Glimmer"] },
+        { text: "Touch it gently", types: ["Cinna", "Droop"] },
+        { text: "Jump back and giggle", types: ["Gremie", "Lintle"] },
+        { text: "Take a small piece to study later", types: ["Myca & Pip", "Puff"] }
+      ]
+    },
+    {
+      question: "You hear rustling in the bushes, you:",
+      image: "images/q4.png",
+      options: [
+        { text: "Approach slowly and curiously", types: ["Glimmer", "Gremie"] },
+        { text: "Hide and watch carefully", types: ["Noxie", "Droop"] },
+        { text: "Call out and greet", types: ["Puff", "Cinna"] },
+        { text: "Ignore it and continue exploring", types: ["Myca & Pip", "Lintle"] }
+      ]
+    },
+    {
+      question: "You find a mossy clearing with sunlight pouring in, you:",
+      image: "images/q5.png",
+      options: [
+        { text: "Lie down and soak up the warmth", types: ["Cinna", "Myca & Pip"] },
+        { text: "Dance around joyfully", types: ["Gremie", "Lintle"] },
+        { text: "Look for creatures hiding in the light", types: ["Glimmer", "Puff"] },
+        { text: "Meditate quietly", types: ["Droop", "Noxie"] }
+      ]
+    },
+    {
+      question: "A gentle rain starts, you:",
+      image: "images/q6.png",
+      options: [
+        { text: "Splash in the puddles", types: ["Gremie", "Puff"] },
+        { text: "Sit under a mushroom umbrella", types: ["Droop", "Cinna"] },
+        { text: "Listen to the rhythm of the rain", types: ["Myca & Pip", "Glimmer"] },
+        { text: "Dance barefoot in the drops", types: ["Lintle", "Noxie"] }
+      ]
+    },
+    {
+      question: "You discover an ancient tree with glowing runes, you:",
+      image: "images/q7.png",
+      options: [
+        { text: "Study the runes closely", types: ["Noxie", "Glimmer"] },
+        { text: "Sit beneath it in wonder", types: ["Cinna", "Droop"] },
+        { text: "Climb it to see the forest", types: ["Puff", "Lintle"] },
+        { text: "Talk to the tree softly", types: ["Myca & Pip", "Gremie"] }
+      ]
+    },
+    {
+      question: "You feel a tiny presence nearby, you:",
+      image: "images/q8.png",
+      options: [
+        { text: "Reach out gently", types: ["Cinna", "Gremie"] },
+        { text: "Wait and see who it is", types: ["Droop", "Noxie"] },
+        { text: "Laugh and call out playfully", types: ["Lintle", "Puff"] },
+        { text: "Whisper softly in greeting", types: ["Glimmer", "Myca & Pip"] }
+      ]
+    }
+  ];
 
-const resultsData = {
-  dreamer: {
-    title: "You got Forest Dreamer!",
-    image: "images/dreamer.png",
-    desc: "A gentle, imaginative soul with a magical connection to the forest."
-  },
-  nurturer: {
-    title: "You got Moss Nurturer!",
-    image: "images/nurturer.png",
-    desc: "Warm, grounding, and protective — you care for all living things."
-  },
-  thinker: {
-    title: "You got Rune Thinker!",
-    image: "images/thinker.png",
-    desc: "Curious, analytical, quietly wise — a seeker of hidden knowledge."
-  },
-  social: {
-    title: "You got Grove Gatherer!",
-    image: "images/social.png",
-    desc: "Friendly, lively, community-minded — a true forest companion."
-  },
-  wanderer: {
-    title: "You got Wind Wanderer!",
-    image: "images/wanderer.png",
-    desc: "Free-spirited, calm, and always exploring new paths."
-  }
-};
+  const resultsData = {
+    "Cinna": { title: "You got Cinna!", image: "images/cinna.png" },
+    "Droop": { title: "You got Droop!", image: "images/droop.png" },
+    "Glimmer": { title: "You got Glimmer!", image: "images/glimmer.png" },
+    "Noxie": { title: "You got Noxie!", image: "images/noxie.png" },
+    "Myca & Pip": { title: "You got Myca & Pip!", image: "images/myca_pip.png" },
+    "Puff": { title: "You got Puff!", image: "images/puff.png" },
+    "Lintle": { title: "You got Lintle!", image: "images/lintle.png" },
+    "Gremie": { title: "You got Gremie!", image: "images/gremie.png" }
+  };
 
-// ---------------------
-  // STATE
-  // ---------------------
- let currentIndex = 0;
-  let scores = { dreamer:0, nurturer:0, thinker:0, social:0, wanderer:0 };
+  // --------------------- STATE ---------------------
+  let currentIndex = 0;
+  let scores = { "Cinna":0, "Droop":0, "Glimmer":0, "Noxie":0, "Myca & Pip":0, "Puff":0, "Lintle":0, "Gremie":0 };
 
+  // --------------------- ELEMENTS ---------------------
   const introScreen = document.getElementById("intro-screen");
   const startBtn = document.getElementById("start-btn");
 
@@ -114,20 +108,26 @@ const resultsData = {
   const questionText = document.getElementById("question-text");
   const optionsDiv = document.getElementById("options");
 
+  const preresultScreen = document.getElementById("preresult-screen");
+  const continueBtn = document.getElementById("continue-btn");
+
   const resultScreen = document.getElementById("result-screen");
   const resultTitle = document.getElementById("result-title");
   const resultImage = document.getElementById("result-image");
   const restartBtn = document.getElementById("restart-btn");
 
+  // --------------------- START QUIZ ---------------------
   startBtn.addEventListener("click", () => {
     introScreen.classList.add("hidden");
     quizScreen.classList.remove("hidden");
     showQuestion();
   });
 
+  // --------------------- SHOW QUESTION ---------------------
   function showQuestion() {
     if (currentIndex >= quizData.length) {
-      showResult();
+      quizScreen.classList.add("hidden");
+      preresultScreen.classList.remove("hidden");
       return;
     }
 
@@ -140,30 +140,33 @@ const resultsData = {
       const btn = document.createElement("button");
       btn.className = "option-btn";
       btn.textContent = opt.text;
-
       btn.addEventListener("click", () => {
-        scores[opt.type]++;
+        opt.types.forEach(type => scores[type]++);
         currentIndex++;
-        showQuestion(); // automatically go to next question
+        showQuestion();
       });
-
       optionsDiv.appendChild(btn);
     });
   }
 
+  // --------------------- CONTINUE TO RESULT ---------------------
+  continueBtn.addEventListener("click", () => {
+    preresultScreen.classList.add("hidden");
+    showResult();
+  });
+
+  // --------------------- SHOW RESULT ---------------------
   function showResult() {
-    quizScreen.classList.add("hidden");
     resultScreen.classList.remove("hidden");
-
     const topType = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
-
     resultTitle.textContent = resultsData[topType].title;
     resultImage.src = resultsData[topType].image;
   }
 
+  // --------------------- RESTART ---------------------
   restartBtn.addEventListener("click", () => {
     currentIndex = 0;
-    for(let key in scores) scores[key] = 0;
+    for (let key in scores) scores[key] = 0;
     resultScreen.classList.add("hidden");
     introScreen.classList.remove("hidden");
   });
